@@ -1,0 +1,32 @@
+.app-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cyan);
+  font-family: cinzel;
+  cursor: pointer;
+}
+
+.mat-toolbar.mat-primary {
+  box-shadow: 10px 25px 30px rgba(30, 30, 30, 0.3);
+  display: flex;
+  justify-content: space-between;
+}
+.genre-container {
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  position: absolute;
+  right: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 1rem;
+  column-gap: 0.5rem;
+  background-color: rgba(36, 36, 36, 0.559);
+}
+
+.genre-list:hover {
+  transform: scale(1.1);
+}
+
+.genre-list {
+  transition: 0.1s;
+}

@@ -1,0 +1,123 @@
+<div class="error-container" *ngIf="!isHidden">
+  <p class="error">ERROR: {{ errorMessage }}</p>
+</div>
+
+<div class="container">
+  <div class="anime-options">
+    <form
+      class="example-form"
+      [formGroup]="animeOptions"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-error">
+        <mat-form-field
+          class="example-full-width"
+          color="accent"
+          appearance="outline"
+        >
+          <mat-label>Page No</mat-label>
+          <input matInput placeholder="Max: 2609" formControlName="page" />
+        </mat-form-field>
+        <!-- <small style="color: red"> Required </small> -->
+      </div>
+
+      <mat-form-field
+        class="example-full-width"
+        color="accent"
+        appearance="outline"
+      >
+        <mat-label>Size</mat-label>
+        <input matInput placeholder="Max: 10" formControlName="size" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="example-full-width"
+        color="accent"
+        appearance="outline"
+      >
+        <mat-label>Search</mat-label>
+        <input matInput formControlName="search" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="example-full-width"
+        color="accent"
+        appearance="outline"
+      >
+        <mat-label>Genre</mat-label>
+        <input matInput formControlName="genres" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="example-full-width"
+        color="accent"
+        appearance="outline"
+      >
+        <mat-label>Sort By</mat-label>
+        <input matInput formControlName="sortBy" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="example-full-width"
+        color="accent"
+        appearance="outline"
+      >
+        <mat-label>Sort Order</mat-label>
+        <input matInput formControlName="sortOrder" />
+      </mat-form-field>
+
+      <mat-form-field
+        class="example-full-width"
+        color="accent"
+        appearance="outline"
+      >
+        <mat-label>Type</mat-label>
+        <input matInput formControlName="types" />
+      </mat-form-field>
+
+      <button type="submit" mat-button color="accent">Filter</button>
+      <button
+        type="button"
+        mat-button
+        color="accent"
+        (click)="clearFilteredAnime()"
+      >
+        Clear All
+      </button>
+    </form>
+
+    <!-- {{ animeOptions.value | json }} -->
+  </div>
+  <div class="card" *ngFor="let anime of animeList">
+    <div class="image">
+      <img [src]="anime.image" [alt]="anime.title" />
+    </div>
+    <div class="card-body">
+      <span class="card-title">{{ anime.title }}</span>
+      <span
+        >Rank <img class="icon-img" src="../../../assets/icons/trophy.png" />:
+        {{ anime.ranking }}</span
+      >
+      <span
+        >Type
+        <img class="icon-img" src="../../../assets/icons/video-camera.png" />:
+        {{ anime.type }}</span
+      >
+      <span>Status: {{ anime.status }}</span>
+      <p>{{ anime.synopsis }}</p>
+    </div>
+  </div>
+</div>
+
+<footer *ngIf="isHidden">
+  <div class="toggle-page">
+    <div class="toggle-buttons">
+      <img
+        src="../../../assets/icons/back.png"
+        *ngIf="!hideButton"
+        (click)="loadPreviousPage()"
+      /><span class="pageNo">{{ currentPage }}</span>
+      <img src="../../../assets/icons/next.png" (click)="loadNextPage()" />
+    </div>
+  </div>
+</footer>

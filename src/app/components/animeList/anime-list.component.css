@@ -1,0 +1,77 @@
+.container {
+  padding: 0.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+}
+
+.card-body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.card-title {
+  font-family: "Cinzel";
+  font-size: xx-large;
+  font-weight: 600;
+  color: var(--cyan);
+}
+
+.icon-img {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0.2rem;
+  padding: 0.5rem 0.5rem;
+  left: 50%;
+  background-color: #00646f;
+  color: var(--black);
+  border-radius: 0.5rem;
+}
+
+.toggle-buttons > img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.toggle-buttons > img:hover {
+  transform: scale(1.2);
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.pageNo {
+  background-color: #ffffff;
+  padding: 0.1rem 0.4rem;
+}
+
+.anime-options {
+  padding-top: 1rem;
+  width: 100%;
+
+  background-color: rgba(41, 41, 41, 0.616);
+}
+
+.example-form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-error {
+  display: grid;
+}
