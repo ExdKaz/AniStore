@@ -25,6 +25,7 @@ export class AnimeListComponent implements OnInit {
 
   ngOnInit() {
     this.getAnime(this.filteredList);
+    console.log('bbb', this.filteredList);
   }
 
   animeOptions = this.formBuilder.group({

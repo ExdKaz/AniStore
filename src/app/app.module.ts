@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
