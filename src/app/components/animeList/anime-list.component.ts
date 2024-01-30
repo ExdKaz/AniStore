@@ -29,8 +29,8 @@ export class AnimeListComponent implements OnInit {
   }
 
   animeOptions = this.formBuilder.group({
-    page: ['', [Validators.required, Validators.max(2609)]],
-    size: ['', [Validators.required, Validators.max(10)]],
+    page: ['1', [Validators.max(2609)]],
+    size: ['10', [Validators.max(10)]],
     search: [''],
     genres: [''],
     sortBy: [''],
@@ -103,6 +103,8 @@ export class AnimeListComponent implements OnInit {
   }
 
   clearFilteredAnime() {
+    this.currentPage = 1;
+    this.hideButton = true;
     this.getAnime(this.list);
   }
 }
