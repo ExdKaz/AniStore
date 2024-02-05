@@ -30,7 +30,7 @@ export class AnimeListComponent implements OnInit {
 
   animeOptions = this.formBuilder.group({
     page: ['1', [Validators.max(2609)]],
-    size: ['10', [Validators.max(10)]],
+    size: [''],
     search: [''],
     genres: [''],
     sortBy: [''],
